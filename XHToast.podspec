@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "XHToast-Swift"
   s.version      = "1.0.0"
-  s.summary      = "一行代码提示工具"
+  s.summary      = "简洁轻便提示工具,一行代码既可完成提示信息显示."
   s.homepage     = "https://github.com/CoderZhuXH/XHToast-Swift"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.authors      = { "Zhu Xiaohui" => "977950862@qq.com"}
