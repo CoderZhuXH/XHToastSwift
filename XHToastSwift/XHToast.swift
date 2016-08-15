@@ -4,7 +4,7 @@
 //
 //  Created by xiaohui on 16/8/12.
 //  Copyright © 2016年 qiantou. All rights reserved.
-//  代码地址:https://github.com/CoderZhuXH/XHToast-Swift
+//  代码地址:https://github.com/CoderZhuXH/XHToastSwift
 
 
 import UIKit
@@ -32,7 +32,7 @@ extension XHToast
      
      - parameter text: 文字
      */
-    class func showCenterWithText(text: String) {
+   class func showCenterWithText(text: String) {
         XHToast.showCenterWithText(text, duration:ToastDispalyDuration)
     }
     
@@ -138,7 +138,7 @@ extension XHToast
     
 }
 
-class XHToast:NSObject {
+public class XHToast:NSObject {
     
     var contentView: UIButton
     var duration:CGFloat
@@ -178,7 +178,7 @@ class XHToast:NSObject {
         
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

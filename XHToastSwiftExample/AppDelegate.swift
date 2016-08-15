@@ -4,7 +4,7 @@
 //
 //  Created by xiaohui on 16/8/12.
 //  Copyright © 2016年 qiantou. All rights reserved.
-//  代码地址:https://github.com/CoderZhuXH/XHToast-Swift
+//  代码地址:https://github.com/CoderZhuXH/XHToastSwift
 
 import UIKit
 

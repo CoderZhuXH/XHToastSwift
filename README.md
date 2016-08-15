@@ -100,11 +100,12 @@
 
 ##  安装
 ### 1.手动添加:<br>
-*   1.将 XHToast-Swift文件夹添加到工程目录中即可<br>
+*   1.将 XHToastSwift文件夹添加到工程目录中即可<br>
 
 ### 2.CocoaPods:<br>
-*   1.在 Podfile 中添加 pod 'XHToast-Swift'<br>
+*   1.在 Podfile 中添加 pod 'XHToastSwift'<br>
 *   2.执行 pod install 或 pod update<br>
+*   3.导入 import XHToastSwift
 
 ### 3.Tips
 *    如果你发现你执行`pod install`后,导入的不是最新的,请删除`Podfile.lock`文件,在执行一次 `pod install` 

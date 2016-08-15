@@ -12,7 +12,7 @@
 		4B7543461D5DE5C5007D3C7E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7543451D5DE5C5007D3C7E /* ViewController.swift */; };
 		4B75434B1D5DE5C5007D3C7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B75434A1D5DE5C5007D3C7E /* Assets.xcassets */; };
 		4B75434E1D5DE5C5007D3C7E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B75434C1D5DE5C5007D3C7E /* LaunchScreen.storyboard */; };
-		4B7543581D5DE65F007D3C7E /* XHToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7543571D5DE65F007D3C7E /* XHToast.swift */; };
+		4B7C87AD1D61A23D0099E1FA /* XHToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7C87AC1D61A23D0099E1FA /* XHToast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		4B75434A1D5DE5C5007D3C7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B75434D1D5DE5C5007D3C7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B75434F1D5DE5C5007D3C7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B7543571D5DE65F007D3C7E /* XHToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XHToast.swift; sourceTree = "<group>"; };
+		4B7C87AC1D61A23D0099E1FA /* XHToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XHToast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +41,7 @@
 			isa = PBXGroup;
 			children = (
 				4B7543421D5DE5C5007D3C7E /* XHToastSwiftExample */,
-				4B7543561D5DE64D007D3C7E /* XHToast-Swift */,
+				4B7C87AB1D61A23D0099E1FA /* XHToastSwift */,
 				4B7543411D5DE5C5007D3C7E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,12 +67,12 @@
 			path = XHToastSwiftExample;
 			sourceTree = "<group>";
 		};
-		4B7543561D5DE64D007D3C7E /* XHToast-Swift */ = {
+		4B7C87AB1D61A23D0099E1FA /* XHToastSwift */ = {
 			isa = PBXGroup;
 			children = (
-				4B7543571D5DE65F007D3C7E /* XHToast.swift */,
+				4B7C87AC1D61A23D0099E1FA /* XHToast.swift */,
 			);
-			path = "XHToast-Swift";
+			path = XHToastSwift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,7 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B7543461D5DE5C5007D3C7E /* ViewController.swift in Sources */,
-				4B7543581D5DE65F007D3C7E /* XHToast.swift in Sources */,
+				4B7C87AD1D61A23D0099E1FA /* XHToast.swift in Sources */,
 				4B7543441D5DE5C5007D3C7E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
