@@ -40,7 +40,7 @@
      - parameter text:     文字
      - parameter duration: 自定义停留时间
      */
-    class func showCenterWithText(text:String, duration:CGFloat)
+    public class func showCenterWithText(text:String, duration:CGFloat)
 
     // MARK:-上方显示
 
@@ -50,7 +50,7 @@
      - parameter text:     文字
      - parameter duration: 自定义停留时间
      */
-    class func showTopWithText(text:String, duration:CGFloat)
+    public class func showTopWithText(text:String, duration:CGFloat)
 
     /**
      上方显示+自定义到顶部距离
@@ -58,7 +58,7 @@
      - parameter text:      文字
      - parameter topOffset: 自定义到顶部距离
      */
-    class func showTopWithText(text:String,topOffset:CGFloat)
+    public class func showTopWithText(text:String,topOffset:CGFloat)
 
     /**
      上方显示+自定义到顶部距离+自定义停留时间
@@ -67,7 +67,7 @@
      - parameter topOffset: 自定义到顶部距离
      - parameter duration:  自定义停留时间
      */
-    class func showTopWithText(text:String, topOffset:CGFloat,duration:CGFloat)
+    public class func showTopWithText(text:String, topOffset:CGFloat,duration:CGFloat)
 
     // MARK:-下方显示
 
@@ -77,7 +77,7 @@
      - parameter text:     文字
      - parameter duration: 自定义停留时间
      */
-    class func showBottomWithText(text:String,duration:CGFloat)
+    public class func showBottomWithText(text:String,duration:CGFloat)
 
     /**
      下方显示+自定义到底部距离
@@ -85,7 +85,7 @@
      - parameter text:         文字
      - parameter bottomOffset: 自定义到底部距离
      */
-    class func showBottomWithText(text:String,bottomOffset:CGFloat)
+    public class func showBottomWithText(text:String,bottomOffset:CGFloat)
 
     /**
      下方显示+自定义到底部距离+自定义停留时间
@@ -94,7 +94,7 @@
      - parameter bottomOffset: 自定义到底部距离
      - parameter duration:     自定义停留时间
      */
-    class func showBottomWithText(text:String,bottomOffset:CGFloat,duration:CGFloat)
+    public class func showBottomWithText(text:String,bottomOffset:CGFloat,duration:CGFloat)
 
 ```
 

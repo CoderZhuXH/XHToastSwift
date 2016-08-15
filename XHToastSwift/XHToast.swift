@@ -32,7 +32,7 @@ extension XHToast
      
      - parameter text: 文字
      */
-   class func showCenterWithText(text: String) {
+    public class func showCenterWithText(text: String) {
         XHToast.showCenterWithText(text, duration:ToastDispalyDuration)
     }
     
@@ -42,7 +42,7 @@ extension XHToast
      - parameter text:     文字
      - parameter duration: 自定义停留时间
      */
-    class func showCenterWithText(text:String, duration:CGFloat) {
+    public class func showCenterWithText(text:String, duration:CGFloat) {
         let toast = XHToast(text: text)
         toast.duration = duration
         toast.show()
@@ -55,7 +55,7 @@ extension XHToast
      
      - parameter text: 文字
      */
-    class func showTopWithText(text:String) {
+    public class func showTopWithText(text:String) {
         XHToast.showTopWithText(text, topOffset:ToastSpace, duration:ToastDispalyDuration)
     }
     
@@ -65,7 +65,7 @@ extension XHToast
      - parameter text:     文字
      - parameter duration: 自定义停留时间
      */
-    class func showTopWithText(text:String, duration:CGFloat) {
+    public class func showTopWithText(text:String, duration:CGFloat) {
         XHToast.showTopWithText(text, topOffset:ToastSpace, duration:duration)
     }
     
@@ -75,7 +75,7 @@ extension XHToast
      - parameter text:      文字
      - parameter topOffset: 自定义到顶部距离
      */
-    class func showTopWithText(text:String,topOffset:CGFloat) {
+    public class func showTopWithText(text:String,topOffset:CGFloat) {
         XHToast.showTopWithText(text, topOffset:topOffset, duration:ToastDispalyDuration)
     }
     
@@ -86,7 +86,7 @@ extension XHToast
      - parameter topOffset: 自定义到顶部距离
      - parameter duration:  自定义停留时间
      */
-    class func showTopWithText(text:String, topOffset:CGFloat,duration:CGFloat) {
+    public class func showTopWithText(text:String, topOffset:CGFloat,duration:CGFloat) {
         let toast = XHToast(text: text)
         toast.duration = duration
         toast.showFromTopOffset(topOffset)
@@ -99,7 +99,7 @@ extension XHToast
      
      - parameter text: 文字
      */
-    class func showBottomWithText(text:String) {
+    public class func showBottomWithText(text:String) {
         XHToast.showBottomWithText(text, bottomOffset:ToastSpace, duration:ToastDispalyDuration)
     }
     
@@ -109,7 +109,7 @@ extension XHToast
      - parameter text:     文字
      - parameter duration: 自定义停留时间
      */
-    class func showBottomWithText(text:String,duration:CGFloat) {
+    public class func showBottomWithText(text:String,duration:CGFloat) {
         XHToast.showBottomWithText(text, bottomOffset:ToastSpace, duration:duration)
     }
     
@@ -119,7 +119,7 @@ extension XHToast
      - parameter text:         文字
      - parameter bottomOffset: 自定义到底部距离
      */
-    class func showBottomWithText(text:String,bottomOffset:CGFloat) {
+    public class func showBottomWithText(text:String,bottomOffset:CGFloat) {
         XHToast.showBottomWithText(text, bottomOffset:bottomOffset, duration:ToastDispalyDuration)
     }
     
@@ -130,7 +130,7 @@ extension XHToast
      - parameter bottomOffset: 自定义到底部距离
      - parameter duration:     自定义停留时间
      */
-    class func showBottomWithText(text:String,bottomOffset:CGFloat,duration:CGFloat) {
+    public class func showBottomWithText(text:String,bottomOffset:CGFloat,duration:CGFloat) {
         let toast: XHToast = XHToast(text: text)
         toast.duration = duration
         toast.showFromBottomOffset(bottomOffset)

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "XHToastSwift"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "简洁轻便提示工具,一行代码既可完成提示信息显示."
   s.homepage     = "https://github.com/CoderZhuXH/XHToastSwift"
   s.license      = { :type => "MIT", :file => "LICENSE" }
