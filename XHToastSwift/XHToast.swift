@@ -143,11 +143,6 @@ public class XHToast:NSObject {
     var contentView: UIButton
     var duration:CGFloat
     
-    deinit
-    {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIDeviceOrientationDidChangeNotification, object: UIDevice.currentDevice())
-    }
-    
     init(text: String) {
         
         duration = ToastDispalyDuration
@@ -173,19 +168,11 @@ public class XHToast:NSObject {
         contentView.addTarget(self, action:#selector(toastTaped(_:)), forControlEvents: UIControlEvents.TouchDown)
         contentView.alpha = 0.0
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(deviceOrientationDidChanged(_:)), name: UIDeviceOrientationDidChangeNotification, object: UIDevice.currentDevice())
-        
-        
     }
     
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    @objc private func deviceOrientationDidChanged(notify: NSNotification) {
-        self.hideAnimation()
-    }
-    
     
     private func dismissToast() {
         contentView.removeFromSuperview()
