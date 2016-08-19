@@ -4,7 +4,7 @@
 ### 技术交流群(群号:537476189)
 
 ## 效果
-![image](http://d3.freep.cn/3tb_160813142852a24n569478.gif)
+![image](https://github.com/CoderZhuXH/XHToastSwift/blob/master/DEMO.gif)
 
 ## 使用方法
 #### 1.普通调用
