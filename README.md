@@ -1,6 +1,6 @@
 # XHToastSwift
 #### 简洁轻便提示工具,一行代码,既可完成提示信息显示.
-####[OC版本请戳此处>>>](https://github.com/CoderZhuXH/XHToast)
+#### OC版本请戳这里>>> https://github.com/CoderZhuXH/XHToast
 ### 技术交流群(群号:537476189)
 
 ## 效果
