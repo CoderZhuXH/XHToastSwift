@@ -4,7 +4,7 @@
 [![AppVeyor](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg?maxAge=2592000)](https://github.com/CoderZhuXH/XHToastSwift)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/CoderZhuXH/XHToastSwift)
 [![Version Status](https://img.shields.io/cocoapods/v/XHToastSwift.svg?style=flat)](http://cocoadocs.org/docsets/XHToastSwift)
-[![Support](https://img.shields.io/badge/support-iOS%207%2B-brightgreen.svg)](https://github.com/CoderZhuXH/XHToastSwift)
+![Support](https://img.shields.io/badge/support-iOS%208%2B-brightgreen.svg)
 [![Pod Platform](https://img.shields.io/cocoapods/p/XHToastSwift.svg?style=flat)](http://cocoadocs.org/docsets/XHToastSwift)
 [![Pod License](https://img.shields.io/cocoapods/l/XHToastSwift.svg?style=flat)](https://github.com/CoderZhuXH/XHToastSwift/blob/master/LICENSE)
 
