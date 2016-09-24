@@ -3,7 +3,7 @@
 //  XHToastSwiftExample
 //
 //  Created by xiaohui on 16/8/12.
-//  Copyright © 2016年 qiantou. All rights reserved.
+//  Copyright © 2016年 CoderZhuXH. All rights reserved.
 //  代码地址:https://github.com/CoderZhuXH/XHToastSwift
 
 
@@ -32,7 +32,8 @@ extension XHToast
      
      - parameter text: 文字
      */
-    public class func showCenterWithText(text: String) {
+    public class func showCenterWithText(_ text: String) {
+        
         XHToast.showCenterWithText(text, duration:ToastDispalyDuration)
     }
     
@@ -42,12 +43,12 @@ extension XHToast
      - parameter text:     文字
      - parameter duration: 自定义停留时间
      */
-    public class func showCenterWithText(text:String, duration:CGFloat) {
+    public class func showCenterWithText(_ text:String,duration:CGFloat) {
         let toast = XHToast(text: text)
         toast.duration = duration
         toast.show()
     }
-    
+
     // MARK:-上方显示
     
     /**
@@ -55,7 +56,7 @@ extension XHToast
      
      - parameter text: 文字
      */
-    public class func showTopWithText(text:String) {
+    public class func showTopWithText(_ text:String) {
         XHToast.showTopWithText(text, topOffset:ToastSpace, duration:ToastDispalyDuration)
     }
     
@@ -65,7 +66,7 @@ extension XHToast
      - parameter text:     文字
      - parameter duration: 自定义停留时间
      */
-    public class func showTopWithText(text:String, duration:CGFloat) {
+    public class func showTopWithText(_ text:String, duration:CGFloat) {
         XHToast.showTopWithText(text, topOffset:ToastSpace, duration:duration)
     }
     
@@ -75,7 +76,7 @@ extension XHToast
      - parameter text:      文字
      - parameter topOffset: 自定义到顶部距离
      */
-    public class func showTopWithText(text:String,topOffset:CGFloat) {
+    public class func showTopWithText(_ text:String,topOffset:CGFloat) {
         XHToast.showTopWithText(text, topOffset:topOffset, duration:ToastDispalyDuration)
     }
     
@@ -86,7 +87,7 @@ extension XHToast
      - parameter topOffset: 自定义到顶部距离
      - parameter duration:  自定义停留时间
      */
-    public class func showTopWithText(text:String, topOffset:CGFloat,duration:CGFloat) {
+    public class func showTopWithText(_ text:String, topOffset:CGFloat,duration:CGFloat) {
         let toast = XHToast(text: text)
         toast.duration = duration
         toast.showFromTopOffset(topOffset)
@@ -99,7 +100,7 @@ extension XHToast
      
      - parameter text: 文字
      */
-    public class func showBottomWithText(text:String) {
+    public class func showBottomWithText(_ text:String) {
         XHToast.showBottomWithText(text, bottomOffset:ToastSpace, duration:ToastDispalyDuration)
     }
     
@@ -109,7 +110,7 @@ extension XHToast
      - parameter text:     文字
      - parameter duration: 自定义停留时间
      */
-    public class func showBottomWithText(text:String,duration:CGFloat) {
+    public class func showBottomWithText(_ text:String,duration:CGFloat) {
         XHToast.showBottomWithText(text, bottomOffset:ToastSpace, duration:duration)
     }
     
@@ -119,7 +120,7 @@ extension XHToast
      - parameter text:         文字
      - parameter bottomOffset: 自定义到底部距离
      */
-    public class func showBottomWithText(text:String,bottomOffset:CGFloat) {
+    public class func showBottomWithText(_ text:String,bottomOffset:CGFloat) {
         XHToast.showBottomWithText(text, bottomOffset:bottomOffset, duration:ToastDispalyDuration)
     }
     
@@ -130,7 +131,7 @@ extension XHToast
      - parameter bottomOffset: 自定义到底部距离
      - parameter duration:     自定义停留时间
      */
-    public class func showBottomWithText(text:String,bottomOffset:CGFloat,duration:CGFloat) {
+    public class func showBottomWithText(_ text:String,bottomOffset:CGFloat,duration:CGFloat) {
         let toast: XHToast = XHToast(text: text)
         toast.duration = duration
         toast.showFromBottomOffset(bottomOffset)
@@ -138,7 +139,7 @@ extension XHToast
     
 }
 
-public class XHToast:NSObject {
+open class XHToast:NSObject {
     
     var contentView: UIButton
     var duration:CGFloat
@@ -147,25 +148,25 @@ public class XHToast:NSObject {
         
         duration = ToastDispalyDuration
         
-        let font = UIFont.boldSystemFontOfSize(16)
+        let font = UIFont.boldSystemFont(ofSize: 16)
         let attributes = [NSFontAttributeName: font]
-        let rect = text.boundingRectWithSize(CGSizeMake(250,CGFloat.max), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes:attributes, context: nil)
-        let textLabel: UILabel = UILabel(frame: CGRectMake(0, 0, rect.size.width+40, rect.size.height+20))
-        textLabel.backgroundColor = UIColor.clearColor()
-        textLabel.textColor = UIColor.whiteColor()
-        textLabel.textAlignment = NSTextAlignment.Center
+        let rect = text.boundingRect(with: CGSize(width: 250,height: CGFloat.greatestFiniteMagnitude), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes:attributes, context: nil)
+        let textLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: rect.size.width+40, height: rect.size.height+20))
+        textLabel.backgroundColor = UIColor.clear
+        textLabel.textColor = UIColor.white
+        textLabel.textAlignment = NSTextAlignment.center
         textLabel.font = font
         textLabel.text = text
         textLabel.numberOfLines = 0
-        contentView = UIButton(frame: CGRectMake(0, 0, textLabel.frame.size.width, textLabel.frame.size.height))
+        contentView = UIButton(frame: CGRect(x: 0, y: 0, width: textLabel.frame.size.width, height: textLabel.frame.size.height))
         contentView.layer.cornerRadius = 20.0
         contentView.backgroundColor = ToastBackgroundColor
         contentView.addSubview(textLabel)
-        contentView.autoresizingMask = UIViewAutoresizing.FlexibleWidth
+        contentView.autoresizingMask = UIViewAutoresizing.flexibleWidth
         
         super.init()
         
-        contentView.addTarget(self, action:#selector(toastTaped(_:)), forControlEvents: UIControlEvents.TouchDown)
+        contentView.addTarget(self, action:#selector(toastTaped(_:)), for: UIControlEvents.touchDown)
         contentView.alpha = 0.0
         
     }
@@ -174,18 +175,18 @@ public class XHToast:NSObject {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func dismissToast() {
+    fileprivate func dismissToast() {
         contentView.removeFromSuperview()
     }
     
-    @objc private func toastTaped(sender: UIButton) {
+    @objc fileprivate func toastTaped(_ sender: UIButton) {
         
         self.hideAnimation()
     }
     
-    private func showAnimation() {
+    fileprivate func showAnimation() {
         
-        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions.curveEaseIn, animations: {
             
             self.contentView.alpha = 1.0
             
@@ -195,9 +196,9 @@ public class XHToast:NSObject {
         }
     }
     
-    private  func hideAnimation() {
+    fileprivate  func hideAnimation() {
         
-        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0, options: UIViewAnimationOptions.curveEaseOut, animations: {
             
             self.contentView.alpha = 0.0
             
@@ -208,35 +209,35 @@ public class XHToast:NSObject {
         
     }
     
-    private func show() {
-        let window = UIApplication.sharedApplication().windows.last!
+    fileprivate func show() {
+        let window = UIApplication.shared.windows.last!
         contentView.center = window.center
         window.addSubview(contentView)
         self.showAnimation()
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(UInt64(duration) * NSEC_PER_SEC)),dispatch_get_main_queue()) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(UInt64(duration) * NSEC_PER_SEC)) / Double(NSEC_PER_SEC)) {
             
             self.hideAnimation()
             
         }
     }
     
-    private func showFromTopOffset(top: CGFloat) {
-        let window = UIApplication.sharedApplication().windows.last!
-        contentView.center = CGPointMake(window.center.x, top+contentView.frame.size.height/2)
+    fileprivate func showFromTopOffset(_ top: CGFloat) {
+        let window = UIApplication.shared.windows.last!
+        contentView.center = CGPoint(x: window.center.x, y: top+contentView.frame.size.height/2)
         window.addSubview(contentView)
         self.showAnimation()
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(UInt64(duration) * NSEC_PER_SEC)),dispatch_get_main_queue()) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(UInt64(duration) * NSEC_PER_SEC)) / Double(NSEC_PER_SEC)) {
             
             self.hideAnimation()
         }
     }
     
-    private func showFromBottomOffset(bottom: CGFloat) {
-        let window = UIApplication.sharedApplication().windows.last!
-        contentView.center = CGPointMake(window.center.x, window.frame.size.height-(bottom+contentView.frame.size.height/2))
+    fileprivate func showFromBottomOffset(_ bottom: CGFloat) {
+        let window = UIApplication.shared.windows.last!
+        contentView.center = CGPoint(x: window.center.x, y: window.frame.size.height-(bottom+contentView.frame.size.height/2))
         window.addSubview(contentView)
         self.showAnimation()
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(UInt64(duration) * NSEC_PER_SEC)),dispatch_get_main_queue()) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(UInt64(duration) * NSEC_PER_SEC)) / Double(NSEC_PER_SEC)) {
             
             self.hideAnimation()
         }

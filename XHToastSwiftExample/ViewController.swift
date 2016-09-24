@@ -3,7 +3,7 @@
 //  XHToastSwiftExample
 //
 //  Created by xiaohui on 16/8/12.
-//  Copyright © 2016年 qiantou. All rights reserved.
+//  Copyright © 2016年 CoderZhuXH. All rights reserved.
 //  代码地址:https://github.com/CoderZhuXH/XHToastSwift
 
 import UIKit
@@ -17,88 +17,92 @@ class ViewController: UIViewController{
                       ["底部显示","底部显示+自定义停留时间","底部显示+自定义距底部距离","底部显示+自定义距底部距离+自定义停留时间"]
     ]
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "XHToastSwiftExample"
-        
     }
 }
 //MARK: - tableView
 extension ViewController:UITableViewDelegate,UITableViewDataSource
 {
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         
         return dataArray.count
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         let array = dataArray[section]
         return array.count
         
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return 44.0
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         return 10
     }
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
         return 0.01
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellID = "cell"
-        var cell = tableView.dequeueReusableCellWithIdentifier(cellID)
+        var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
         if cell == nil
         {
-            cell = UITableViewCell(style:.Default ,reuseIdentifier: cellID)
+            cell = UITableViewCell(style:.default ,reuseIdentifier: cellID)
         }
-        cell?.textLabel?.text = dataArray[indexPath.section][indexPath.row]
+        cell?.textLabel?.text = dataArray[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
         cell?.textLabel?.numberOfLines = 0
         return cell!
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        tableView.deselectRow(at: indexPath, animated: false)
         
-        let text = dataArray[indexPath.section][indexPath.row]
+        let text = dataArray[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
         //MARK: - 中间
-        if indexPath.section == 0
+        if (indexPath as NSIndexPath).section == 0
         {
-            if indexPath.row == 0
+            if (indexPath as NSIndexPath).row == 0
             {
                 /**
                  * 中间显示
                  */
                 XHToast.showCenterWithText(text)
+                
+               
             }
-            else if indexPath.row == 1
+            else if (indexPath as NSIndexPath).row == 1
             {
                 /**
                  *  中间显示+自定义停留时间
                  */
                 XHToast.showCenterWithText(text, duration:3.0)
+                
             }
         }
         //MARK: - 顶端
-        else if indexPath.section == 1
+        else if (indexPath as NSIndexPath).section == 1
         {
             /**
              *  顶端显示
              */
-            if indexPath.row == 0
+            if (indexPath as NSIndexPath).row == 0
             {
                 XHToast.showTopWithText(text)
             }
-            else if indexPath.row == 1
+            else if (indexPath as NSIndexPath).row == 1
             {
                 /**
                  *  顶端显示 + 自定义停留时间
@@ -106,14 +110,14 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource
                 XHToast.showTopWithText(text, duration:3.0)
                 
             }
-            else if indexPath.row == 2
+            else if (indexPath as NSIndexPath).row == 2
             {
                 /**
                  *  顶端显示 + 自定义到顶端距离
                  */
                 XHToast.showTopWithText(text, topOffset:150)
             }
-            else if indexPath.row == 3
+            else if (indexPath as NSIndexPath).row == 3
             {
                 /**
                  *  顶端显示+自定义到顶端距离+自定义停留时间
@@ -128,11 +132,11 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource
             /**
              *  底端显示
              */
-            if indexPath.row == 0
+            if (indexPath as NSIndexPath).row == 0
             {
                 XHToast.showBottomWithText(text)
             }
-            else if indexPath.row == 1
+            else if (indexPath as NSIndexPath).row == 1
             {
                 /**
                  *  底端显示 + 自定义停留时间
@@ -140,14 +144,14 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource
                 XHToast.showBottomWithText(text, duration:3.0)
                 
             }
-            else if indexPath.row == 2
+            else if (indexPath as NSIndexPath).row == 2
             {
                 /**
                  *  底端显示 + 自定义到顶端距离
                  */
                 XHToast.showBottomWithText(text, bottomOffset:150)
             }
-            else if indexPath.row == 3
+            else if (indexPath as NSIndexPath).row == 3
             {
                 /**
                  *  底端显示+自定义到顶端距离+自定义停留时间

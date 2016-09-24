@@ -107,6 +107,7 @@
 				TargetAttributes = {
 					4B75433F1D5DE5C5007D3C7E = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -256,8 +257,9 @@
 				INFOPLIST_FILE = XHToastSwiftExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = qiantou.XHToastSwiftExample;
+				PRODUCT_BUNDLE_IDENTIFIER = CoderZhuXH.XHToastSwiftExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -268,8 +270,9 @@
 				INFOPLIST_FILE = XHToastSwiftExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = qiantou.XHToastSwiftExample;
+				PRODUCT_BUNDLE_IDENTIFIER = CoderZhuXH.XHToastSwiftExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

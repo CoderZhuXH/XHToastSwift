@@ -4,7 +4,7 @@
 [![AppVeyor](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg?maxAge=2592000)](https://github.com/CoderZhuXH/XHToastSwift)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/CoderZhuXH/XHToastSwift)
 [![Version Status](https://img.shields.io/cocoapods/v/XHToastSwift.svg?style=flat)](http://cocoadocs.org/docsets/XHToastSwift)
-![Support](https://img.shields.io/badge/support-iOS%208%2B-brightgreen.svg)
+![Support](https://img.shields.io/badge/support-iOS%209%2B-brightgreen.svg)
 [![Pod Platform](https://img.shields.io/cocoapods/p/XHToastSwift.svg?style=flat)](http://cocoadocs.org/docsets/XHToastSwift)
 [![Pod License](https://img.shields.io/cocoapods/l/XHToastSwift.svg?style=flat)](https://github.com/CoderZhuXH/XHToastSwift/blob/master/LICENSE)
 
@@ -50,7 +50,7 @@
      - parameter text:     文字
      - parameter duration: 自定义停留时间
      */
-    public class func showCenterWithText(text:String, duration:CGFloat)
+    public class func showCenterWithText(_ text:String, duration:CGFloat)
 
     // MARK:-上方显示
 
@@ -60,7 +60,7 @@
      - parameter text:     文字
      - parameter duration: 自定义停留时间
      */
-    public class func showTopWithText(text:String, duration:CGFloat)
+    public class func showTopWithText(_ text:String, duration:CGFloat)
 
     /**
      上方显示+自定义到顶部距离
@@ -68,7 +68,7 @@
      - parameter text:      文字
      - parameter topOffset: 自定义到顶部距离
      */
-    public class func showTopWithText(text:String,topOffset:CGFloat)
+    public class func showTopWithText(_ text:String,topOffset:CGFloat)
 
     /**
      上方显示+自定义到顶部距离+自定义停留时间
@@ -77,7 +77,7 @@
      - parameter topOffset: 自定义到顶部距离
      - parameter duration:  自定义停留时间
      */
-    public class func showTopWithText(text:String, topOffset:CGFloat,duration:CGFloat)
+    public class func showTopWithText(_ text:String, topOffset:CGFloat,duration:CGFloat)
 
     // MARK:-下方显示
 
@@ -87,7 +87,7 @@
      - parameter text:     文字
      - parameter duration: 自定义停留时间
      */
-    public class func showBottomWithText(text:String,duration:CGFloat)
+    public class func showBottomWithText(_ text:String,duration:CGFloat)
 
     /**
      下方显示+自定义到底部距离
@@ -95,7 +95,7 @@
      - parameter text:         文字
      - parameter bottomOffset: 自定义到底部距离
      */
-    public class func showBottomWithText(text:String,bottomOffset:CGFloat)
+    public class func showBottomWithText(_ text:String,bottomOffset:CGFloat)
 
     /**
      下方显示+自定义到底部距离+自定义停留时间
@@ -104,7 +104,7 @@
      - parameter bottomOffset: 自定义到底部距离
      - parameter duration:     自定义停留时间
      */
-    public class func showBottomWithText(text:String,bottomOffset:CGFloat,duration:CGFloat)
+    public class func showBottomWithText(_ text:String,bottomOffset:CGFloat,duration:CGFloat)
 
 ```
 
@@ -122,7 +122,7 @@
 *   2.如果你发现你执行pod install后,导入的不是最新版本,请删除Podfile.lock文件,在执行一次 pod install
 
 ##  系统要求
-*   该项目最低支持 iOS 8.0 和 Xcode 7.3
+*   该项目最低支持 iOS 9.0 和 Xcode 8
 
 ##  许可证
 XHToast 使用 MIT 许可证，详情见 LICENSE 文件
