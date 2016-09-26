@@ -9,6 +9,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "8.0"
   s.source       = { :git => "https://github.com/CoderZhuXH/XHToastSwift.git", :tag => s.version }
   s.source_files = "XHToastSwift", "*.{swift}"
-  s.requires_arc = true
+  #s.requires_arc = true
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
   
 end
