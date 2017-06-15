@@ -22,6 +22,8 @@
     /*
     您只需要调用一行代码,既可完成提示信息显示
     */
+   
+   //1.在window上显示toast
  
     /*
     中间显示
@@ -38,8 +40,26 @@
     */
     XHToast.showBottomWithText("您要显示的提示信息")
 
+
+    //2.你也可以这样调用,在view上显示toast
+    /*
+    中间显示
+    */
+     self.view.showXHToastCenterWithText("您要显示的提示信息")
+
+    /*
+    上方显示
+    */
+    self.view.showXHToastTopWithText("您要显示的提示信息")
+
+    /**
+    * 底端显示
+    */
+    self.view.showXHToastBottomWithText("您要显示的提示信息")
+
 ```
 #### 2.自定义Toast停留时间+到屏幕上端/下端距离(见如下方法)
+##### 1.显示至window
 ```swift
 
     // MARK:-中间显示
@@ -107,7 +127,76 @@
     public class func showBottomWithText(_ text:String,bottomOffset:CGFloat,duration:CGFloat)
 
 ```
+##### 2.显示至view
 
+```objc
+
+ // MARK:- 中间显示
+    
+
+    /// 中间显示+自定义停留时间
+    ///
+    /// - Parameters:
+    ///   - text: 文字
+    ///   - duration: 自定义停留时间
+    public func showXHToastCenterWithText(_ text:String , duration:CGFloat)
+
+    
+    /// 上方显示+自定义停留时间
+    ///
+    /// - Parameters:
+    ///   - text: 文字
+    ///   - duration: 自定义停留时间
+    public func showXHToastTopWithText(_ text:String,  duration:CGFloat)
+
+    
+  // MARK:- 上方显示 
+
+    /// 上方显示+自定义到顶部距离
+    ///
+    /// - Parameters:
+    ///   - text: 文字
+    ///   - topOffset: 自定义到顶部距离
+    public func showXHToastTopWithText(_ text:String,topOffset:CGFloat)
+    
+    
+    /// 上方显示+自定义到顶部距离+自定义停留时间
+    ///
+    /// - Parameters:
+    ///   - text: 文字
+    ///   - topOffset: 自定义到顶部距离
+    ///   - duration: 自定义停留时间
+    public  func showXHToastTopWithText(_ text:String,topOffset:CGFloat,duration:CGFloat) 
+    
+
+  // MARK:- 下方显示    
+
+    /// 下方显示+自定义停留时间
+    ///
+    /// - Parameters:
+    ///   - text: 文字
+    ///   - duration: 自定义停留时间
+    public func showXHToastBottomWithText(_ text:String,  duration:CGFloat)
+
+    
+    /// 下方显示+自定义到顶部距离
+    ///
+    /// - Parameters:
+    ///   - text: 文字
+    ///   - topOffset: 自定义到顶部距离
+    public func showXHToastBottomWithText(_ text:String,bottomOffset:CGFloat)
+
+    
+    /// 下方显示+自定义到顶部距离+自定义停留时间
+    ///
+    /// - Parameters:
+    ///   - text: 文字
+    ///   - topOffset: 自定义到顶部距离
+    ///   - duration: 自定义停留时间
+    public  func showXHToastBottomWithText(_ text:String,bottomOffset:CGFloat,duration:CGFloat)
+
+
+```
 ##  安装
 ### 1.手动添加:<br>
 *   1.将 XHToastSwift文件夹添加到工程目录中即可<br>

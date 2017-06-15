@@ -154,7 +154,7 @@ extension UIView
     }
     
     
-    /// 中间显示
+    /// 中间显示+自定义停留时间
     ///
     /// - Parameters:
     ///   - text: 文字
@@ -179,7 +179,7 @@ extension UIView
     }
     
     
-    /// 上方显示
+    /// 上方显示+自定义停留时间
     ///
     /// - Parameters:
     ///   - text: 文字
@@ -191,7 +191,7 @@ extension UIView
     }
     
     
-    /// 上方显示
+    /// 上方显示+自定义到顶部距离
     ///
     /// - Parameters:
     ///   - text: 文字
@@ -203,7 +203,7 @@ extension UIView
     }
     
     
-    /// 上方显示
+    /// 上方显示+自定义到顶部距离+自定义停留时间
     ///
     /// - Parameters:
     ///   - text: 文字
@@ -228,7 +228,7 @@ extension UIView
     }
     
     
-    /// 下方显示
+    /// 下方显示+自定义停留时间
     ///
     /// - Parameters:
     ///   - text: 文字
@@ -240,7 +240,7 @@ extension UIView
     }
     
     
-    /// 下方显示
+    /// 下方显示+自定义到顶部距离
     ///
     /// - Parameters:
     ///   - text: 文字
@@ -251,7 +251,7 @@ extension UIView
         
     }
     
-    /// 下方显示
+    /// 下方显示+自定义到顶部距离+自定义停留时间
     ///
     /// - Parameters:
     ///   - text: 文字
