@@ -17,8 +17,6 @@ class ViewController: UIViewController{
                       ["底部显示","底部显示+自定义停留时间","底部显示+自定义距底部距离","底部显示+自定义距底部距离+自定义停留时间"]
     ]
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "XHToastSwiftExample"
@@ -70,7 +68,21 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource
         
         tableView.deselectRow(at: indexPath, animated: false)
         
+        //在window上显示
+        self.showInWindow(indexPath: indexPath)
+        
+        //在view上显示
+        //self.showInView(indexPath: indexPath)
+        
+    }
+    
+    
+    //在window上显示
+    func showInWindow(indexPath: IndexPath) {
+        
+
         let text = dataArray[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
+        
         //MARK: - 中间
         if (indexPath as NSIndexPath).section == 0
         {
@@ -80,8 +92,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource
                  * 中间显示
                  */
                 XHToast.showCenterWithText(text)
-                
-               
+
             }
             else if (indexPath as NSIndexPath).row == 1
             {
@@ -89,10 +100,10 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource
                  *  中间显示+自定义停留时间
                  */
                 XHToast.showCenterWithText(text, duration:3.0)
-                
+
             }
         }
-        //MARK: - 顶端
+            //MARK: - 顶端
         else if (indexPath as NSIndexPath).section == 1
         {
             /**
@@ -101,6 +112,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource
             if (indexPath as NSIndexPath).row == 0
             {
                 XHToast.showTopWithText(text)
+
             }
             else if (indexPath as NSIndexPath).row == 1
             {
@@ -108,6 +120,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource
                  *  顶端显示 + 自定义停留时间
                  */
                 XHToast.showTopWithText(text, duration:3.0)
+
                 
             }
             else if (indexPath as NSIndexPath).row == 2
@@ -116,6 +129,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource
                  *  顶端显示 + 自定义到顶端距离
                  */
                 XHToast.showTopWithText(text, topOffset:150)
+
             }
             else if (indexPath as NSIndexPath).row == 3
             {
@@ -126,7 +140,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource
                 
             }
         }
-        //MARK: - 底部
+            //MARK: - 底部
         else
         {
             /**
@@ -160,5 +174,104 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource
                 
             }
         }
+
+    }
+    
+    //在view上显示
+    func showInView(indexPath: IndexPath) {
+        
+        let text = dataArray[(indexPath as NSIndexPath).section][(indexPath as NSIndexPath).row]
+        
+        //MARK: - 中间
+        if (indexPath as NSIndexPath).section == 0
+        {
+            if (indexPath as NSIndexPath).row == 0
+            {
+                /**
+                 * 中间显示
+                 */
+
+                self.view.showXHToastCenterWithText(text)
+                
+                
+            }
+            else if (indexPath as NSIndexPath).row == 1
+            {
+                /**
+                 *  中间显示+自定义停留时间
+                 */
+                self.view.showXHToastCenterWithText(text, duration: 3.0)
+                
+            }
+        }
+            //MARK: - 顶端
+        else if (indexPath as NSIndexPath).section == 1
+        {
+
+            if (indexPath as NSIndexPath).row == 0
+            {
+                /**
+                 *  顶端显示
+                 */
+                self.view.showXHToastTopWithText(text)
+            }
+            else if (indexPath as NSIndexPath).row == 1
+            {
+                /**
+                 *  顶端显示 + 自定义停留时间
+                 */
+                self.view.showXHToastTopWithText(text, duration: 3.0)
+                
+            }
+            else if (indexPath as NSIndexPath).row == 2
+            {
+                /**
+                 *  顶端显示 + 自定义到顶端距离
+                 */
+                self.view.showXHToastTopWithText(text, topOffset: 150)
+            }
+            else if (indexPath as NSIndexPath).row == 3
+            {
+                /**
+                 *  顶端显示+自定义到顶端距离+自定义停留时间
+                 */
+                self.view.showXHToastTopWithText(text, topOffset: 150, duration: 3.0)
+                
+            }
+        }
+            //MARK: - 底部
+        else
+        {
+            if (indexPath as NSIndexPath).row == 0
+            {
+                /**
+                 *  底端显示
+                 */
+                self.view.showXHToastBottomWithText(text)
+            }
+            else if (indexPath as NSIndexPath).row == 1
+            {
+                /**
+                 *  底端显示 + 自定义停留时间
+                 */
+                self.view.showXHToastBottomWithText(text, duration:3.0)
+                
+            }
+            else if (indexPath as NSIndexPath).row == 2
+            {
+                /**
+                 *  底端显示 + 自定义到顶端距离
+                 */
+                self.view.showXHToastBottomWithText(text, bottomOffset: 150)
+            }
+            else if (indexPath as NSIndexPath).row == 3
+            {
+                /**
+                 *  底端显示+自定义到顶端距离+自定义停留时间
+                 */
+                self.view.showXHToastBottomWithText(text, bottomOffset: 150, duration: 3.0)
+            }
+        }
+
     }
 }

@@ -22,7 +22,7 @@ private let ToastSpace:CGFloat = 100.0
  */
 private let ToastBackgroundColor = UIColor(red:0.2,green:0.2,blue:0.2,alpha:0.75)
 
-
+//在window上显示
 extension XHToast
 {
     //MARK:-中间显示
@@ -46,7 +46,7 @@ extension XHToast
     public class func showCenterWithText(_ text:String,duration:CGFloat) {
         let toast = XHToast(text: text)
         toast.duration = duration
-        toast.show()
+        toast.showIn(UIWindow.window())
     }
 
     // MARK:-上方显示
@@ -90,7 +90,7 @@ extension XHToast
     public class func showTopWithText(_ text:String, topOffset:CGFloat,duration:CGFloat) {
         let toast = XHToast(text: text)
         toast.duration = duration
-        toast.showFromTopOffset(topOffset)
+        toast.showIn(UIWindow.window(), topOffset: topOffset)
     }
     
     // MARK:-下方显示
@@ -134,9 +134,143 @@ extension XHToast
     public class func showBottomWithText(_ text:String,bottomOffset:CGFloat,duration:CGFloat) {
         let toast: XHToast = XHToast(text: text)
         toast.duration = duration
-        toast.showFromBottomOffset(bottomOffset)
+        toast.showIn(UIWindow.window(), bottomOffset: bottomOffset)
     }
     
+}
+
+//在view上显示
+extension UIView
+{
+    // MARK:- 中间显示
+    
+    /// 中间显示
+    ///
+    /// - Parameter text: 文字
+    public func showXHToastCenterWithText(_ text:String){
+        
+        self.showXHToastCenterWithText(text, duration: ToastDispalyDuration)
+    
+    }
+    
+    
+    /// 中间显示
+    ///
+    /// - Parameters:
+    ///   - text: 文字
+    ///   - duration: 自定义停留时间
+    public func showXHToastCenterWithText(_ text:String , duration:CGFloat){
+    
+        let toast: XHToast = XHToast(text: text)
+        toast.duration = duration
+        toast.showIn(self)
+    
+    }
+    
+    
+    // MARK:-上方显示
+    
+    /// 上方显示
+    ///
+    /// - Parameter text: 文字
+    public func showXHToastTopWithText(_ text:String){
+    
+       self.showXHToastTopWithText(text, topOffset: ToastSpace, duration: ToastDispalyDuration)
+    }
+    
+    
+    /// 上方显示
+    ///
+    /// - Parameters:
+    ///   - text: 文字
+    ///   - duration: 自定义停留时间
+    public func showXHToastTopWithText(_ text:String,  duration:CGFloat){
+    
+      self.showXHToastTopWithText(text, topOffset: ToastSpace, duration: duration)
+    
+    }
+    
+    
+    /// 上方显示
+    ///
+    /// - Parameters:
+    ///   - text: 文字
+    ///   - topOffset: 自定义到顶部距离
+    public func showXHToastTopWithText(_ text:String,topOffset:CGFloat){
+    
+        self.showXHToastTopWithText(text, topOffset: topOffset, duration: ToastDispalyDuration)
+    
+    }
+    
+    
+    /// 上方显示
+    ///
+    /// - Parameters:
+    ///   - text: 文字
+    ///   - topOffset: 自定义到顶部距离
+    ///   - duration: 自定义停留时间
+    public  func showXHToastTopWithText(_ text:String,topOffset:CGFloat,duration:CGFloat) {
+        
+        let toast: XHToast = XHToast(text: text)
+        toast.duration = duration
+        toast.showIn(self, topOffset: topOffset)
+        
+    }
+    
+
+    //MARK:-下方显示
+    
+    /// 下方显示
+    ///
+    /// - Parameter text: 文字
+    public func showXHToastBottomWithText(_ text:String){
+        self.showXHToastBottomWithText(text, bottomOffset: ToastSpace, duration: ToastDispalyDuration)
+    }
+    
+    
+    /// 下方显示
+    ///
+    /// - Parameters:
+    ///   - text: 文字
+    ///   - duration: 自定义停留时间
+    public func showXHToastBottomWithText(_ text:String,  duration:CGFloat){
+        
+         self.showXHToastBottomWithText(text, bottomOffset: ToastSpace, duration: duration)
+        
+    }
+    
+    
+    /// 下方显示
+    ///
+    /// - Parameters:
+    ///   - text: 文字
+    ///   - topOffset: 自定义到顶部距离
+    public func showXHToastBottomWithText(_ text:String,bottomOffset:CGFloat){
+        
+        self.showXHToastBottomWithText(text, bottomOffset: bottomOffset, duration: ToastDispalyDuration)
+        
+    }
+    
+    /// 下方显示
+    ///
+    /// - Parameters:
+    ///   - text: 文字
+    ///   - topOffset: 自定义到顶部距离
+    ///   - duration: 自定义停留时间
+    public  func showXHToastBottomWithText(_ text:String,bottomOffset:CGFloat,duration:CGFloat) {
+        
+        let toast: XHToast = XHToast(text: text)
+        toast.duration = duration
+        toast.showIn(self, bottomOffset: bottomOffset)
+    }
+
+}
+
+extension UIWindow
+{
+    fileprivate class func window() -> UIWindow{
+        return UIApplication.shared.windows.last!
+    }
 }
 
 open class XHToast:NSObject {
@@ -209,10 +343,10 @@ open class XHToast:NSObject {
         
     }
     
-    fileprivate func show() {
-        let window = UIApplication.shared.windows.last!
-        contentView.center = window.center
-        window.addSubview(contentView)
+    fileprivate func showIn(_ view:UIView) {
+
+        contentView.center = view.center
+        view.addSubview(contentView)
         self.showAnimation()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(UInt64(duration) * NSEC_PER_SEC)) / Double(NSEC_PER_SEC)) {
             
@@ -221,10 +355,10 @@ open class XHToast:NSObject {
         }
     }
     
-    fileprivate func showFromTopOffset(_ top: CGFloat) {
-        let window = UIApplication.shared.windows.last!
-        contentView.center = CGPoint(x: window.center.x, y: top+contentView.frame.size.height/2)
-        window.addSubview(contentView)
+    fileprivate func showIn(_ view:UIView,topOffset top: CGFloat) {
+        
+        contentView.center = CGPoint(x: view.center.x, y: top+contentView.frame.size.height/2)
+        view.addSubview(contentView)
         self.showAnimation()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(UInt64(duration) * NSEC_PER_SEC)) / Double(NSEC_PER_SEC)) {
             
@@ -232,10 +366,10 @@ open class XHToast:NSObject {
         }
     }
     
-    fileprivate func showFromBottomOffset(_ bottom: CGFloat) {
-        let window = UIApplication.shared.windows.last!
-        contentView.center = CGPoint(x: window.center.x, y: window.frame.size.height-(bottom+contentView.frame.size.height/2))
-        window.addSubview(contentView)
+    fileprivate func showIn(_ view:UIView,bottomOffset bottom: CGFloat) {
+        
+        contentView.center = CGPoint(x: view.center.x, y: view.frame.size.height-(bottom+contentView.frame.size.height/2))
+        view.addSubview(contentView)
         self.showAnimation()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(UInt64(duration) * NSEC_PER_SEC)) / Double(NSEC_PER_SEC)) {
             
