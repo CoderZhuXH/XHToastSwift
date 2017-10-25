@@ -269,7 +269,11 @@ extension UIView
 extension UIWindow
 {
     fileprivate class func window() -> UIWindow{
-        return UIApplication.shared.windows.last!
+        let window = UIApplication.shared.windows.last!
+        if(!window.isHidden){
+            return window;
+        }
+        return (UIApplication.shared.delegate?.window!)!;
     }
 }
 
