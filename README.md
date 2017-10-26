@@ -211,7 +211,7 @@
 *   2.如果你发现你执行pod install后,导入的不是最新版本,请删除Podfile.lock文件,在执行一次 pod install
 
 ##  系统要求
-*   该项目最低支持 iOS 9.0 和 Xcode 8
+*   该项目最低支持 iOS 8.0 和 Xcode 8
 
 ##  许可证
 XHToast 使用 MIT 许可证，详情见 LICENSE 文件
